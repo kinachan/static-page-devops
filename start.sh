@@ -343,7 +343,7 @@ const getLocalIP = () => {
 gulp.task("browserSyncTask", function (done) {
   const ipAddress = getLocalIP();
   if (ipAddress) {
-    qrCode.generate(`http://${ipAddress}:3000`, { small: true }, (result) => {
+    qrCode.generate("http://" + ipAddress + ":$PORT", { small: true }, (result) => {
       console.log(`[INFO] スマホではこの環境で表示してください。`)
       console.log(result);
     });
